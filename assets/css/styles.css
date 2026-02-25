@@ -691,7 +691,7 @@ footer{
     font-size: 16px;
     line-height: 1.75;
 
-    text-align: left;          /* ✅ stop ugly justification */
+    text-align: justify;          /* ✅ stop ugly justification */
     text-justify: auto;
     hyphens: none;             /* ✅ stop Nat-ural breaks */
     -webkit-hyphens: none;
@@ -756,6 +756,7 @@ footer{
     padding: 8px 12px;
   }
 }
+
 
 
 
