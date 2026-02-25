@@ -1,0 +1,163 @@
+{
+  "person": {
+    "name": "Fahmid Shahriar Iqbal",
+    "tagline": "PhD (ongoing) · NLP/ML · Research & Teaching",
+    "location": "San Antonio / Denton, TX",
+    "email": "fahmidshahriariqbal@my.unt.edu",
+    "phone": "(210) 744-3683",
+    "github": "https://github.com/fahmidiqbal",
+    "scholar": "https://scholar.google.com/citations?hl=en&user=1UWTahcAAAAJ",
+    "avatar": "assets/img/avatar.jpg",
+    "intro": "I am currently a PhD student in Computer Science at the University of North Texas, working under the supervision of Dr. Sagnik Ray Choudhury. My research lies in Natural Language Processing, with a primary focus on understanding and improving the generalization of NLP models across diverse dimensions. In particular, I study model behavior in terms of reasoning capabilities, robustness to distributional shifts, and interpretability. Through systematic evaluation and analysis, my work aims to move beyond surface-level accuracy toward deeper insights into how and why NLP models succeed or fail."
+  },
+
+  "education": [
+  {
+    "range": "2024 – Present",
+    "degree": "PhD in Computer Science (ongoing)",
+    "place": "University of North Texas (UNT), Denton, TX, USA",
+    "details": [
+      "Research focus: NLP / LLM evaluation and robustness"
+    ]
+  },
+  {
+    "range": "2022 – 2024",
+    "degree": "M.Sc. in Computer Science",
+    "place": "University of Texas at San Antonio (UTSA), San Antonio, TX, USA",
+    "details": []
+  },
+  {
+    "range": "2013 – 2017",
+    "degree": "B.Sc. in Computer Science and Engineering",
+    "place": "Islamic University of Technology (IUT), Gazipur, Bangladesh",
+    "details": []
+  },
+  {
+    "range": "2011 – 2012",
+    "degree": "Higher Secondary Certificate",
+    "place": "Dinajpur Govt. College, Dinajpur, Bangladesh",
+    "details": []
+  },
+  {
+    "range": "2009 – 2010",
+    "degree": "Secondary School Certificate",
+    "place": "Dinajpur Zila School, Dinajpur, Bangladesh",
+    "details": []
+  }
+],
+
+  "employment": [
+
+     {
+      "range": "Aug 2024 – Present",
+      "title": "Graduate Teaching Assistant",
+      "place": "Department of Computer Science, UNT",
+      "bullets": [
+        "Natural Language Processing(Spring 2025, Fall 2025, Spring 2026)"
+        
+      ]
+    },
+
+    {
+      "range": "Aug 2022 – May 2024",
+      "title": "Graduate Teaching Assistant",
+      "place": "Department of Computer Science, UTSA",
+      "bullets": [
+        "Analysis of Algorithm (Fall 2022)",
+        "User Interfaces and Usability (Spring 2023)",
+        "Game Development (Summer 2023)",
+        "Data Science (Fall 2024)"
+      ]
+    },
+    {
+      "range": "Jan 2023 – May 2023",
+      "title": "Graduate Research Assistant",
+      "place": "Department of Computer Science, UTSA",
+      "bullets": [
+        "Supervisor: Dr. Wei Wang",
+        "Topic: Security in Augmented Reality"
+      ]
+    },
+    {
+      "range": "Feb 2018 – April 2021",
+      "title": "Instructor (Lecturer)",
+      "place": "Department of CSE, Uttara University, Dhaka, Bangladesh",
+      "bullets": [
+        "Taught: Algorithms, OS, Data Structures, ML, DSP",
+        "Responsibilities: lecture notes, mentoring, supervising undergraduates"
+      ]
+    },
+    {
+      "range": "May 2021 – Present(Currently on leave",
+      "title": "Senior Lecturer",
+      "place": "Department of CSE, Uttara University, Dhaka, Bangladesh",
+      "bullets": []
+    },
+    {
+      "range": "May 2021 – Nov 2021",
+      "title": "Adjunct Faculty",
+      "place": "Department of CSE, Islamic University of Technology, Dhaka, Bangladesh",
+      "bullets": [
+        "Taught: Visual Programming, Ethics in Engineering"
+      ]
+    }
+  ],
+
+"news": [
+  {
+    "date": "2025-08",
+    "title": "UNT AI Summer Research Program 2025",
+    "text": "I served as a graduate advisor for two undergraduate researchers on a project exploring adversarial perturbations to evaluate reasoning robustness in NLP models. The work culminated in a poster presentation demonstrating how targeted input changes reveal model vulnerabilities in reasoning.",
+    "image": "assets/img/news/unt-summer-2025.jpg",
+    "image_alt": "Group board for UNT AI Summer Research Program 2025",
+    "link": ""
+  },
+
+{
+  "date": "2025-11",
+  "title": "PhD Qualifying Examination Passed",
+  "text": "Successfully passed the PhD Qualifying Examination in Computer Science at the University of North Texas."
+},
+  {
+    "date": "2026-02",
+    "title": "Paper accepted at LREC 2026",
+    "text": "One paper accepted at LREC 2026. Arxiv link coming soon!",
+    "image": "",
+    "image_alt": "",
+    "link": ""
+  }
+],
+
+  "publications": [
+
+   { "year": "2026", 
+     "title": "LFQA-HP-1M: A Large-Scale Human Preference Dataset for Long-Form Question Answering", 
+      "venue": "Language Resources and Evaluation Conference - LREC", 
+      "links": {
+             "pdf": "", 
+             "code": "" 
+           } 
+   },
+
+   {
+      "year": "2020",
+      "title": "A Novel Framework for Implementation of Land Registration and Ownership Management via Blockchain in Bangladesh",
+      "venue": "IEEE Region 10 Symposium (TENSYMP)",
+      "doi": "10.1109/TENSYMP50017.2020.9230721",
+      "links": {
+        "pdf": "",
+        "code": ""
+      }
+    },
+    {
+      "year": "2020",
+      "title": "Agritouch — An Efficient Smartphone Based Approach for Rooftop Gardening",
+      "venue": "Recent Research in Science and Technology",
+      "doi": "10.25081/rrst.2020.12.6087",
+      "links": {
+        "pdf": "",
+        "code": ""
+      }
+    }
+  ]
+}

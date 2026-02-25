@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Education | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<header>
+  <div class="container topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1 id="personName">Your Name</h1>
+        <p id="personTagline">Tagline</p>
+      </div>
+    </a>
+
+    <nav aria-label="Primary">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="education.html" data-nav="education">Education</a>
+      <a href="publications.html" data-nav="publications">Publications</a>
+      <a href="employment.html" data-nav="employment">Employment</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Big centered header like your screenshot -->
+  <section class="card section section-hero">
+    <div class="page-title">
+      <h2>Education</h2>
+      <div class="title-underline" aria-hidden="true"></div>
+      <p class="lead">
+        
+      </p>
+    </div>
+  </section>
+
+  <!-- Education list -->
+  <section class="card section">
+    <h3>Timeline <span class="section-note">academic</span></h3>
+    <div class="edu-list" id="educationList"></div>
+  </section>
+
+  <div id="errorBox" class="card section" style="display:none;">
+    <h3>Data load failed</h3>
+    <p class="lead">Could not load <code>data/site.json</code>. Run a local server and refresh.</p>
+  </div>
+
+  <footer>© <span id="year"></span></footer>
+</main>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
