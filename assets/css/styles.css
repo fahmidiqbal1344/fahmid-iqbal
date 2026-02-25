@@ -631,7 +631,7 @@ footer{
   line-height: 1.6;
 }
 
-
+/*
 @media (max-width: 900px){
   .news-card{
     grid-template-columns: 1fr;
@@ -640,5 +640,65 @@ footer{
   .news-img{
     height: 220px;
     max-width: 100%;
+  }
+
+}
+ */
+/* =========================
+   Mobile typography + layout fixes
+   ========================= */
+@media (max-width: 600px){
+
+  /* Make the overall page typography normal on phones */
+  body{
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* About Me text: remove justification & hyphenation on mobile */
+  #introText{
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.75;
+
+    text-align: left;          /* ✅ stop ugly justification */
+    text-justify: auto;
+    hyphens: none;             /* ✅ stop Nat-ural breaks */
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+  }
+
+  /* Make the About title fit nicely */
+  .headline{
+    font-size: 30px;
+    line-height: 1.15;
+  }
+
+  /* Ensure hero becomes 1 column and doesn’t overflow */
+  .hero{
+    grid-template-columns: 1fr;
+  }
+
+  /* Profile area spacing */
+  .profile{
+    grid-template-columns: 96px 1fr; /* smaller avatar for mobile */
+    gap: 12px;
+    align-items: center;
+  }
+
+  .avatar{
+    width: 96px;
+    height: 96px;
+  }
+
+  /* Navigation links: prevent huge spacing */
+  nav{
+    font-size: 13px;
+    gap: 6px;
   }
 }
