@@ -20,30 +20,22 @@
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-*{ box-sizing: border-box; }
-html, body{ height: 100%; }
+*{
+  box-sizing: border-box;
+}
+
+html,
+body{
+  min-height: 100%;
+}
 
 body{
   margin: 0;
   font-family: var(--sans);
-  font-size: 23px;      /* your choice */
+  font-size: 23px;
   line-height: 1.7;
   color: var(--ink);
-}
-
-/* Justified About Me text (Google Docs style) */
-#introText{
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-
-  max-width: 900px;
-  margin-top: 18px;
-  line-height: 1.8;
-  font-size: 18px;
-  color: #334155;
+  background: var(--bg);
 }
 
 p{
@@ -51,40 +43,26 @@ p{
   line-height: 1.75;
 }
 
-/* Default list items */
 li{
   font-size: 16px;
   line-height: 1.7;
 }
 
-/* Headings */
-h1, h2, h3, h4{
+h1,
+h2,
+h3,
+h4{
   letter-spacing: -0.02em;
 }
 
-.headline{
-  font-size: 40px;
-  line-height: 1.12;
+a{
+  color: var(--accent);
+  text-decoration: none;
 }
 
-.section h3{
-  font-size: 22px;
-  font-weight: 750;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
+a:hover{
+  text-decoration: underline;
 }
-
-/* Small text */
-.brand p,
-.section-note,
-.when,
-.edu-when,
-.news-date{
-  font-size: 14px;
-}
-
-a{ color: var(--accent); text-decoration: none; }
-a:hover{ text-decoration: underline; }
 
 .container{
   max-width: var(--max);
@@ -92,21 +70,25 @@ a:hover{ text-decoration: underline; }
   padding: 0 var(--pad);
 }
 
+/* =========================
+   Header
+   ========================= */
 header{
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.94);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
 
 .topbar{
-  height: 66px;
+  min-height: 66px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 24px;
 }
 
 .brand{
@@ -117,54 +99,79 @@ header{
   white-space: nowrap;
 }
 
+.brand:hover{
+  text-decoration: none;
+}
+
 .brand-mark{
   width: 34px;
   height: 34px;
+  flex: 0 0 34px;
   border-radius: 10px;
   background: linear-gradient(135deg, var(--accent), #2c6aa0);
   box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
 .brand h1{
-  font-size: 15px;
   margin: 0;
-  letter-spacing: -0.01em;
+  font-size: 15px;
   font-weight: 750;
+  letter-spacing: -0.01em;
 }
 
 .brand p{
   margin: 0;
   font-size: 12.5px;
   color: var(--muted);
+  line-height: 1.45;
 }
 
+/* Plain-text navigation: no pills/buttons anywhere */
 nav{
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: flex-end;
+  gap: 34px;
+  flex-wrap: nowrap;
   font-size: 14px;
   color: var(--muted);
 }
 
 nav a{
+  position: relative;
   color: inherit;
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid transparent;
+  padding: 20px 0 18px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  white-space: nowrap;
+  transition: color 0.18s ease;
 }
 
 nav a:hover{
   color: var(--ink);
-  background: var(--soft);
+  background: transparent;
+  border: 0;
   text-decoration: none;
-  border-color: var(--border);
 }
 
 nav a[aria-current="true"]{
   color: var(--accent);
-  border-color: var(--accent-soft);
-  background: rgba(31,78,121,0.06);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 700;
+}
+
+nav a[aria-current="true"]::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 11px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
 }
 
 main{
@@ -179,7 +186,9 @@ main{
   box-shadow: var(--shadow);
 }
 
-/* Hero */
+/* =========================
+   Home / Hero
+   ========================= */
 .hero{
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -199,29 +208,42 @@ main{
 }
 
 .kicker{
+  margin: 0 0 10px;
   font-family: var(--mono);
   font-size: 12px;
   color: var(--faint);
-  margin: 0 0 10px 0;
 }
 
 .headline{
+  margin: 0 0 10px;
   font-size: 34px;
   line-height: 1.12;
-  margin: 0 0 10px 0;
   letter-spacing: -0.03em;
 }
 
 .subhead{
   margin: 0;
+  max-width: 80ch;
   color: var(--muted);
   font-size: 15.5px;
-  max-width: 80ch;
+}
+
+/* About Me body on desktop */
+#introText{
+  max-width: 900px;
+  margin-top: 18px;
+  color: #334155;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .hero-right{
-  padding: 18px;
-  padding-bottom: 28px;
+  padding: 18px 18px 28px;
   display: grid;
   gap: 12px;
   align-content: start;
@@ -234,7 +256,6 @@ main{
   align-items: center;
 }
 
-/* Main profile avatar */
 .avatar{
   width: 150px;
   height: 150px;
@@ -249,10 +270,26 @@ main{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.who h2{ margin: 0; font-size: 16px; }
-.who p{ margin: 3px 0 0; color: var(--muted); font-size: 13.5px; }
+.who{
+  min-width: 0;
+  text-align: left;
+}
+
+.who h2{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.who p{
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
 
 .contact{
   display: grid;
@@ -263,8 +300,14 @@ main{
   color: var(--muted);
 }
 
-.contact a{ color: var(--muted); }
-.contact a:hover{ color: var(--ink); text-decoration: none; }
+.contact a{
+  color: var(--muted);
+}
+
+.contact a:hover{
+  color: var(--ink);
+  text-decoration: none;
+}
 
 .pillrow{
   display: flex;
@@ -282,27 +325,34 @@ main{
   color: var(--muted);
 }
 
-/* Sections */
+/* =========================
+   Shared sections
+   ========================= */
 .section{
   padding: 18px 22px;
   margin-top: 16px;
 }
 
 .section h3{
-  margin: 0 0 12px 0;
-  font-size: 22px;
+  margin: 0 0 12px;
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  font-size: 22px;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 .section-note{
+  font-family: var(--mono);
   font-size: 12.5px;
   color: var(--faint);
-  font-family: var(--mono);
 }
 
-/* Timeline */
+/* =========================
+   Employment timeline
+   ========================= */
 .timeline{
   display: grid;
   gap: 12px;
@@ -319,16 +369,16 @@ main{
 }
 
 .when{
+  padding-top: 2px;
   font-family: var(--mono);
   font-size: 12px;
   color: var(--faint);
-  padding-top: 2px;
 }
 
 .what b{
-  display:block;
-  font-size: 14px;
+  display: block;
   margin-bottom: 2px;
+  font-size: 14px;
 }
 
 .what .meta{
@@ -336,20 +386,26 @@ main{
   font-size: 13.5px;
 }
 
-/* IMPORTANT: bullets inside homepage timeline cards */
 .what ul{
   margin: 8px 0 0 18px;
   padding: 0;
   color: var(--muted);
   font-size: 13.5px;
 }
+
 .what ul li{
-  font-size: 13.5px;     /* override global li */
+  font-size: 13.5px;
   line-height: 1.7;
   color: var(--muted);
 }
 
-.pubs{ display: grid; gap: 10px; }
+/* =========================
+   Publications
+   ========================= */
+.pubs{
+  display: grid;
+  gap: 10px;
+}
 
 .pub{
   padding: 12px;
@@ -396,27 +452,40 @@ main{
   background: rgba(31,78,121,0.06);
 }
 
-footer{
-  margin-top: 22px;
-  color: var(--faint);
-  font-size: 13px;
-  padding: 8px 0;
-  text-align: center;
+/* Recent News links: plain academic-style text, not a pill/button */
+.news-actions{
+  margin-top: 2px;
 }
 
-@media (max-width: 900px){
-  .hero{
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-  .headline{ font-size: 30px; }
-  .item{ grid-template-columns: 1fr; gap: 6px; }
+.news-actions .taglink{
+  display: inline;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.news-actions .taglink:hover{
+  color: var(--accent);
+  background: transparent;
+  border: 0;
+  text-decoration: underline;
+}
+
+footer{
+  margin-top: 22px;
+  padding: 8px 0;
+  text-align: center;
+  color: var(--faint);
+  font-size: 13px;
 }
 
 /* =========================
    Education page
    ========================= */
-
 .section-hero{
   padding: 32px 22px;
 }
@@ -442,9 +511,9 @@ footer{
 
 .lead{
   margin: 0 auto;
+  max-width: 85ch;
   color: var(--muted);
   font-size: 14.5px;
-  max-width: 85ch;
 }
 
 .edu-list{
@@ -479,22 +548,22 @@ footer{
 }
 
 .edu-when{
+  padding-top: 2px;
   font-family: var(--mono);
   font-size: 12px;
   color: var(--faint);
-  padding-top: 2px;
 }
 
 .edu-what b{
   display: block;
-  font-size: 15px;
   margin-bottom: 4px;
+  font-size: 15px;
 }
 
 .edu-what .meta{
+  margin-bottom: 6px;
   color: var(--muted);
   font-size: 13.5px;
-  margin-bottom: 6px;
 }
 
 .edu-what ul{
@@ -504,28 +573,22 @@ footer{
   font-size: 13.5px;
 }
 
-/* ✅ FIX: Education bullets match the same font size as education meta text */
 .edu-what ul li{
   font-size: 15px;
   line-height: 1.5;
   color: var(--muted);
 }
 
-@media (max-width: 900px){
-  .page-title h2{ font-size: 34px; }
-  .edu-grid{ grid-template-columns: 1fr; gap: 6px; }
-}
-
 /* =========================
    Recent News
    ========================= */
-
 .news-timeline{
   display: grid;
   gap: 14px;
 }
 
 .news-card{
+  position: relative;
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 16px;
@@ -533,11 +596,10 @@ footer{
   border: 1px solid var(--border);
   border-radius: 14px;
   background: #fff;
-  position: relative;
 }
 
 .news-card::before{
-  content:"";
+  content: "";
   position: absolute;
   left: 10px;
   top: 16px;
@@ -547,22 +609,11 @@ footer{
   background: rgba(31,78,121,0.14);
 }
 
-.news-img{
-  width: 100%;
-  max-width: 560px;
-  aspect-ratio: 16 / 9;      /* ✅ consistent shape */
-  height: auto;
-  object-fit: cover;         /* ✅ nice crop */
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  display: block;
-}
-
 .news-date{
+  padding-left: 14px;
   font-family: var(--mono);
   font-size: 12px;
   color: var(--faint);
-  padding-left: 14px;
 }
 
 .news-main{
@@ -578,10 +629,10 @@ footer{
 }
 
 .news-text{
-  color: var(--muted);
-  font-size: 17px;
   margin: 0;
   max-width: 100%;
+  color: var(--muted);
+  font-size: 17px;
 }
 
 .news-figure{
@@ -593,9 +644,9 @@ footer{
 .news-img{
   width: 100%;
   max-width: 560px;
-  aspect-ratio: 16 / 9;      /* ✅ consistent shape */
+  aspect-ratio: 16 / 9;
   height: auto;
-  object-fit: cover;         /* ✅ nice crop */
+  object-fit: cover;
   border-radius: 12px;
   border: 1px solid var(--border);
   display: block;
@@ -606,7 +657,7 @@ footer{
 }
 
 .subsection-title{
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
   font-size: 18px;
   font-weight: 800;
   color: var(--ink);
@@ -620,9 +671,9 @@ footer{
 }
 
 .submeta{
+  margin-bottom: 10px;
   color: var(--muted);
   font-size: 14px;
-  margin-bottom: 10px;
 }
 
 .subline{
@@ -642,14 +693,223 @@ footer{
   line-height: 1.6;
 }
 
+/* =========================
+   Tablet
+   ========================= */
+@media (max-width: 900px){
+  .hero{
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  /* Profile first, About Me second on smaller screens */
+  .hero-right{
+    order: 1;
+  }
+
+  .hero-left{
+    order: 2;
+  }
+
+  .headline{
+    font-size: 30px;
+  }
+
+  .item{
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .page-title h2{
+    font-size: 34px;
+  }
+
+  .edu-grid{
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+/* =========================
+   Mobile
+   ========================= */
 @media (max-width: 600px){
+  :root{
+    --pad: 16px;
+    --radius: 18px;
+  }
+
+  body{
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  main{
+    padding: 16px 0 30px;
+  }
+
+  /* Compact header */
+  .topbar{
+    min-height: 0;
+    padding: 12px 0 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .brand{
+    max-width: 100%;
+    white-space: normal;
+    align-self: flex-start;
+  }
+
+  .brand-mark{
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .brand h1{
+    font-size: 16px;
+  }
+
+  .brand p{
+    font-size: 12.5px;
+  }
+
+  /* Plain mobile nav: no button/pill shape */
+  nav{
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    font-size: 13.5px;
+  }
+
+  nav::-webkit-scrollbar{
+    display: none;
+  }
+
+  nav a{
+    flex: 0 0 auto;
+    padding: 8px 0 12px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  nav a:hover{
+    background: transparent;
+  }
+
+  nav a[aria-current="true"]{
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  nav a[aria-current="true"]::after{
+    bottom: 5px;
+    height: 2px;
+  }
+
+  .hero{
+    margin-top: 0;
+    gap: 14px;
+  }
+
+  .hero-right,
+  .hero-left{
+    padding: 18px;
+  }
+
+  /* Left-aligned profile, like an academic homepage */
+  .profile{
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+  }
+
+  .avatar{
+    width: 112px;
+    height: 112px;
+    margin: 0;
+  }
+
+  .who{
+    text-align: left;
+  }
+
+  .who h2{
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+  .who p{
+    margin-top: 5px;
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+
+  .contact{
+    padding-top: 14px;
+    gap: 9px;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .pillrow{
+    justify-content: flex-start;
+    gap: 7px;
+    padding-top: 6px;
+  }
+
+  .pill{
+    font-size: 12px;
+    padding: 5px 9px;
+  }
+
+  .headline{
+    margin-bottom: 12px;
+    font-size: 31px;
+    line-height: 1.12;
+  }
+
+  /* No stretched spaces on narrow screens */
+  #introText{
+    max-width: 100%;
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.72;
+    text-align: left;
+    text-justify: auto;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+  }
+
+  .section{
+    margin-top: 14px;
+    padding: 16px;
+  }
+
+  .section h3{
+    font-size: 20px;
+  }
 
   .news-card{
     grid-template-columns: 1fr;
+    gap: 5px;
     padding: 14px;
   }
 
-  /* Remove vertical timeline line */
   .news-card::before{
     display: none;
   }
@@ -668,338 +928,13 @@ footer{
     font-size: 15px;
     line-height: 1.6;
   }
-}
-/* =========================
-   Mobile typography + layout fixes
-   ========================= */
-@media (max-width: 600px){
 
-  /* Make the overall page typography normal on phones */
-  body{
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  p{
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  /* About Me text: remove justification & hyphenation on mobile */
-  #introText{
-    max-width: 100%;
-    font-size: 16px;
-    line-height: 1.75;
-
-    text-align: justify;          /* ✅ stop ugly justification */
-    text-justify: auto;
-    hyphens: none;             /* ✅ stop Nat-ural breaks */
-    -webkit-hyphens: none;
-    -ms-hyphens: none;
-  }
-
-  /* Make the About title fit nicely */
-  .headline{
-    font-size: 30px;
-    line-height: 1.15;
-  }
-
-  /* Ensure hero becomes 1 column and doesn’t overflow */
-  .hero{
-    grid-template-columns: 1fr;
-  }
-
-  /* Profile area spacing */
-  .profile{
-    grid-template-columns: 96px 1fr; /* smaller avatar for mobile */
-    gap: 12px;
-    align-items: center;
-  }
-
-  .avatar{
-    width: 96px;
-    height: 96px;
-  }
-
-  /* Navigation links: prevent huge spacing */
-  nav{
-    font-size: 13px;
-    gap: 6px;
-  }
-}
-/* =========================
-   Mobile header/nav fix (stop "floating" buttons)
-   ========================= */
-@media (max-width: 600px){
-
-  .topbar{
-    height: auto;               /* allow header to grow */
-    padding: 10px 0;
-    flex-direction: column;     /* stack brand + nav */
-    align-items: flex-start;    /* brand left */
-    gap: 10px;
-  }
-
-  .brand{
-    white-space: normal;        /* allow wrapping */
-    max-width: 100%;
-  }
-
-  nav{
-    width: 100%;                /* nav takes full row */
-    justify-content: flex-start;/* align left (clean) */
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  nav a{
-    padding: 8px 12px;
-  }
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-   Final mobile polish
-   Keeps the desktop layout unchanged.
-   ========================= */
-@media (max-width: 600px){
-
-  /* Slightly tighter page spacing on phones */
-  .container{
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-
-  main{
-    padding: 14px 0 28px;
-  }
-
-  .card{
-    border-radius: 18px;
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
-  }
-
-  /* Compact mobile header */
-  .topbar{
-    height: auto;
-    padding: 10px 0 8px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 9px;
-  }
-
-  .brand{
-    width: 100%;
-    gap: 10px;
-    white-space: normal;
-  }
-
-  .brand-mark{
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-  }
-
-  .brand h1{
-    font-size: 15px;
-    line-height: 1.25;
-  }
-
-  .brand p{
-    font-size: 12px;
-    line-height: 1.35;
-  }
-
-  /* Mobile navigation: simple text + active underline */
-  nav{
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    font-size: 13px;
-  }
-
-  nav::-webkit-scrollbar{
-    display: none;
-  }
-
-  nav a{
-    flex: 0 0 auto;
-    padding: 7px 2px 6px;
-    border: 0;
-    border-bottom: 2px solid transparent;
-    border-radius: 0;
-    background: transparent;
-    white-space: nowrap;
-  }
-
-  nav a:hover{
-    color: var(--ink);
-    background: transparent;
-    border-color: transparent;
-    text-decoration: none;
-  }
-
-  nav a[aria-current="true"]{
-    color: var(--accent);
-    background: transparent;
-    border: 0;
-    border-bottom: 2px solid var(--accent);
-    border-radius: 0;
-    font-weight: 700;
-  }
-
-  /* Put the profile/photo card before About Me on phones */
-  .hero{
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 6px;
-  }
-
-  .hero-right{
-    order: 1;
-    padding: 18px 16px;
-  }
-
-  .hero-left{
-    order: 2;
-    padding: 20px 18px;
-  }
-
-  /* Center the profile photo and identity on mobile */
-  .profile{
-    grid-template-columns: 1fr;
-    gap: 10px;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .avatar{
-    width: 112px;
-    height: 112px;
-  }
-
-  .who h2{
-    font-size: 17px;
-    line-height: 1.3;
-  }
-
-  .who p{
-    margin-top: 4px;
-    font-size: 13px;
-    line-height: 1.45;
-  }
-
-  .contact{
-    width: 100%;
-    gap: 7px;
-    padding-top: 12px;
-    font-size: 13.5px;
-    text-align: left;
-  }
-
-  .pillrow{
-    justify-content: center;
-    gap: 6px;
-    padding-top: 4px;
-  }
-
-  .pill{
-    font-size: 11.5px;
-    padding: 5px 9px;
-  }
-
-  /* About Me typography */
-  .headline{
-    font-size: 31px;
-    line-height: 1.12;
-    margin-bottom: 12px;
-  }
-
-  #introText{
-    max-width: 100%;
-    margin-top: 12px;
-    font-size: 16px;
-    line-height: 1.72;
-    text-align: left;
-    text-justify: auto;
-    hyphens: none;
-    -webkit-hyphens: none;
-    -ms-hyphens: none;
-  }
-
-  /* Section spacing */
-  .section{
-    padding: 16px;
-    margin-top: 12px;
-  }
-
-  .section h3{
-    font-size: 20px;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
-
-  /* News cards */
-  .news-timeline{
-    gap: 10px;
-  }
-
-  .news-card{
-    grid-template-columns: 1fr;
-    gap: 7px;
-    padding: 13px;
-  }
-
-  .news-card::before{
-    display: none;
-  }
-
-  .news-date{
-    padding-left: 0;
-    margin-bottom: 0;
-    font-size: 11.5px;
-  }
-
-  .news-title{
-    font-size: 17px;
-    line-height: 1.3;
-  }
-
-  .news-text{
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  /* Education/publication/employment page titles */
   .section-hero{
-    padding: 22px 16px;
+    padding: 24px 16px;
   }
 
   .page-title h2{
     font-size: 30px;
-  }
-
-  .title-underline{
-    width: 72px;
-    height: 3px;
-    margin: 8px auto 10px;
-  }
-
-  .lead{
-    font-size: 14px;
-    line-height: 1.6;
   }
 
   .edu-item,
@@ -1008,10 +943,41 @@ footer{
   .subcard{
     border-radius: 12px;
   }
+}
 
-  .edu-grid,
-  .item{
-    grid-template-columns: 1fr;
-    gap: 6px;
+/* Extra-small phones */
+@media (max-width: 390px){
+  :root{
+    --pad: 13px;
+  }
+
+  nav{
+    gap: 16px;
+    justify-content: flex-start;
+    font-size: 13px;
+  }
+
+  .profile{
+    grid-template-columns: 94px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .avatar{
+    width: 94px;
+    height: 94px;
+  }
+
+  .who h2{
+    font-size: 17px;
+  }
+
+  .who p{
+    font-size: 12.5px;
+  }
+
+  .hero-right,
+  .hero-left,
+  .section{
+    padding: 15px;
   }
 }
