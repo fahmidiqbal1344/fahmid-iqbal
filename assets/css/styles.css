@@ -94,7 +94,7 @@ header{
 .brand{
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0;
   color: var(--ink);
   white-space: nowrap;
 }
@@ -104,12 +104,7 @@ header{
 }
 
 .brand-mark{
-  width: 34px;
-  height: 34px;
-  flex: 0 0 34px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent), #2c6aa0);
-  box-shadow: 0 0 0 4px var(--accent-soft);
+  display: none;
 }
 
 .brand h1{
@@ -768,12 +763,6 @@ footer{
     align-self: flex-start;
   }
 
-  .brand-mark{
-    width: 36px;
-    height: 36px;
-    flex-basis: 36px;
-  }
-
   .brand h1{
     font-size: 16px;
   }
@@ -825,9 +814,12 @@ footer{
     gap: 14px;
   }
 
-  .hero-right,
-  .hero-left{
+  .hero-right{
     padding: 18px;
+  }
+
+  .hero-left{
+    padding: 18px 16px;
   }
 
   /* Left-aligned profile, like an academic homepage */
@@ -884,15 +876,19 @@ footer{
 
   /* No stretched spaces on narrow screens */
   #introText{
-    max-width: 100%;
-    margin-top: 12px;
-    font-size: 16px;
-    line-height: 1.72;
+    width: 100%;
+    max-width: none;
+    margin: 12px 0 0;
+    font-size: 15.5px;
+    line-height: 1.68;
+    color: #334155;
     text-align: left;
     text-justify: auto;
-    hyphens: none;
-    -webkit-hyphens: none;
-    -ms-hyphens: none;
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
   }
 
   .section{
@@ -976,8 +972,11 @@ footer{
   }
 
   .hero-right,
-  .hero-left,
   .section{
     padding: 15px;
+  }
+
+  .hero-left{
+    padding: 16px 14px;
   }
 }
