@@ -124,8 +124,17 @@
     "text": "One paper accepted at LREC 2026. Arxiv link coming soon!",
     "image": "",
     "image_alt": "",
-    "link": ""
-  }
+    "link": "https://arxiv.org/abs/2602.23603"
+  },
+
+  {
+  "date": "2026-10",
+  "title": "Paper accepted at AACL-IJCNLP 2026 Findings",
+  "text": "Our paper on multi-dimensional generalization in temporal extraction tasks has been accepted to the Findings of AACL-IJCNLP 2026.",
+  "image": "",
+  "image_alt": "",
+  "link": ""
+}
 ],
 
   "publications": [

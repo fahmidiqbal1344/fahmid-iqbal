@@ -764,3 +764,254 @@ footer{
 
 
 
+
+/* =========================
+   Final mobile polish
+   Keeps the desktop layout unchanged.
+   ========================= */
+@media (max-width: 600px){
+
+  /* Slightly tighter page spacing on phones */
+  .container{
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  main{
+    padding: 14px 0 28px;
+  }
+
+  .card{
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+  }
+
+  /* Compact mobile header */
+  .topbar{
+    height: auto;
+    padding: 10px 0 8px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 9px;
+  }
+
+  .brand{
+    width: 100%;
+    gap: 10px;
+    white-space: normal;
+  }
+
+  .brand-mark{
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .brand h1{
+    font-size: 15px;
+    line-height: 1.25;
+  }
+
+  .brand p{
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  /* Mobile navigation: simple text + active underline */
+  nav{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    font-size: 13px;
+  }
+
+  nav::-webkit-scrollbar{
+    display: none;
+  }
+
+  nav a{
+    flex: 0 0 auto;
+    padding: 7px 2px 6px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    white-space: nowrap;
+  }
+
+  nav a:hover{
+    color: var(--ink);
+    background: transparent;
+    border-color: transparent;
+    text-decoration: none;
+  }
+
+  nav a[aria-current="true"]{
+    color: var(--accent);
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid var(--accent);
+    border-radius: 0;
+    font-weight: 700;
+  }
+
+  /* Put the profile/photo card before About Me on phones */
+  .hero{
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 6px;
+  }
+
+  .hero-right{
+    order: 1;
+    padding: 18px 16px;
+  }
+
+  .hero-left{
+    order: 2;
+    padding: 20px 18px;
+  }
+
+  /* Center the profile photo and identity on mobile */
+  .profile{
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .avatar{
+    width: 112px;
+    height: 112px;
+  }
+
+  .who h2{
+    font-size: 17px;
+    line-height: 1.3;
+  }
+
+  .who p{
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .contact{
+    width: 100%;
+    gap: 7px;
+    padding-top: 12px;
+    font-size: 13.5px;
+    text-align: left;
+  }
+
+  .pillrow{
+    justify-content: center;
+    gap: 6px;
+    padding-top: 4px;
+  }
+
+  .pill{
+    font-size: 11.5px;
+    padding: 5px 9px;
+  }
+
+  /* About Me typography */
+  .headline{
+    font-size: 31px;
+    line-height: 1.12;
+    margin-bottom: 12px;
+  }
+
+  #introText{
+    max-width: 100%;
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.72;
+    text-align: left;
+    text-justify: auto;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+  }
+
+  /* Section spacing */
+  .section{
+    padding: 16px;
+    margin-top: 12px;
+  }
+
+  .section h3{
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  /* News cards */
+  .news-timeline{
+    gap: 10px;
+  }
+
+  .news-card{
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 13px;
+  }
+
+  .news-card::before{
+    display: none;
+  }
+
+  .news-date{
+    padding-left: 0;
+    margin-bottom: 0;
+    font-size: 11.5px;
+  }
+
+  .news-title{
+    font-size: 17px;
+    line-height: 1.3;
+  }
+
+  .news-text{
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* Education/publication/employment page titles */
+  .section-hero{
+    padding: 22px 16px;
+  }
+
+  .page-title h2{
+    font-size: 30px;
+  }
+
+  .title-underline{
+    width: 72px;
+    height: 3px;
+    margin: 8px auto 10px;
+  }
+
+  .lead{
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .edu-item,
+  .item,
+  .pub,
+  .subcard{
+    border-radius: 12px;
+  }
+
+  .edu-grid,
+  .item{
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
