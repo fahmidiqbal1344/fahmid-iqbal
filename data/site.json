@@ -128,6 +128,15 @@
   },
 
   {
+  "date": "2026-07",
+  "title": "ACL 2026 and GEM 2026 Workshop",
+  "text": "Attended ACL 2026 in San Diego, where our work was presented as a poster at the GEM 2026 Workshop.",
+  "image": "assets/img/news/acl-2026.jpg",
+  "image_alt": "Poster presentation at the GEM 2026 Workshop during ACL 2026 in San Diego",
+  "link": ""
+},
+
+  {
   "date": "2026-10",
   "title": "Paper accepted at AACL-IJCNLP 2026 Findings",
   "text": "Our paper on multi-dimensional generalization in temporal extraction tasks has been accepted to the Findings of AACL-IJCNLP 2026.",
