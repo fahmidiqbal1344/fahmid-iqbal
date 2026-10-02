@@ -3,24 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Home | Portfolio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="assets/css/styles.css" />
-   
 </head>
 
 <body>
+
 <header>
   <div class="container topbar">
+
     <a class="brand" href="index.html">
-      
       <div>
         <h1 id="personName">Your Name</h1>
-        <p id="personTagline">Tagline</p>
       </div>
     </a>
 
@@ -30,53 +34,99 @@
       <a href="publications.html" data-nav="publications">Publications</a>
       <a href="employment.html" data-nav="employment">Employment</a>
     </nav>
+
   </div>
 </header>
 
 <main class="container">
+
   <div class="hero">
+
+    <!-- About Me -->
     <div class="card hero-left">
-      
+
       <h2 class="headline">About Me</h2>
+
       <p class="subhead" id="introText">
         <!-- Filled from data/site.json -->
       </p>
+
     </div>
 
+    <!-- Profile -->
     <aside class="card hero-right">
+
       <div class="profile">
+
         <div class="avatar">
-          <img id="avatarImg" src="assets/img/avatar.jpg" alt="Profile photo" />
+          <img
+            id="avatarImg"
+            src="assets/img/avatar.jpg"
+            alt="Profile photo"
+          />
         </div>
+
         <div class="who">
           <h2 id="personName2">Your Name</h2>
-          <p id="personTagline2">Tagline</p>
         </div>
+
       </div>
 
       <div class="contact" id="contactBlock"></div>
+
       <div class="pillrow" id="pillRow"></div>
+
     </aside>
+
   </div>
 
   <!-- Recent News -->
   <section class="card section">
-    <h3>Recent News <span class="section-note">latest</span></h3>
-    <div class="news-timeline" id="newsList"></div>
+
+    <h3>
+      Recent News
+      <span class="section-note">latest</span>
+    </h3>
+
+    <div
+      class="news-timeline"
+      id="newsList">
+    </div>
+
   </section>
 
   <!-- Error box -->
-  <div id="errorBox" class="card section" style="display:none;">
+  <div
+    id="errorBox"
+    class="card section"
+    style="display:none;"
+  >
+
     <h3>Data load failed</h3>
-    <p style="margin:0;color:var(--muted);font-size:13.5px;">
-      Could not load <code>data/site.json</code>. If you're running locally, use a local server.
+
+    <p
+      style="
+        margin:0;
+        color:var(--muted);
+        font-size:13.5px;
+      "
+    >
+      Could not load
+      <code>data/site.json</code>.
+      If you're running locally, use a local server.
     </p>
+
   </div>
 
-  <footer>© <span id="year"></span> <span id="personNameFooter">Your Name</span></footer>
+  <footer>
+    ©
+    <span id="year"></span>
+    <span id="personNameFooter">Your Name</span>
+  </footer>
+
 </main>
 
 <script src="assets/js/main.js"></script>
-</body>
 
+</body>
 </html>
